@@ -1,6 +1,13 @@
+import axios from "axios"
 
-const APIKEY =() =>{
+
+const axioscryptosite =axios.create({
     
+        baseURL: "https://www.omdbapi.com",
+      });
+
+const axioscrypto  ={
+
 }
 
-export default APIKEY
+export default axioscrypto
