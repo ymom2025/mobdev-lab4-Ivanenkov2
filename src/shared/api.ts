@@ -1,13 +1,13 @@
 import axios from "axios"
+import { IFruits } from "../entity/Fruit.rdo";
 
-
-const axioscryptosite =axios.create({
+const axiosfruitsite =axios.create({
     
-        baseURL: "https://www.omdbapi.com",
+        baseURL: "https://www.fruityvice.com/doc/index.html#api-GET-GETsByOrder",
       });
 
-const axioscrypto  ={
+const axiosfruit  ={
 
 }
 
-export default axioscrypto
+export default axiosfruit
