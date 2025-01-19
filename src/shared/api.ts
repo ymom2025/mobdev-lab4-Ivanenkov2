@@ -8,12 +8,7 @@ const axioshogwartssite =axios.create({
 const axioshogwarts = {
       hogwartsrequest: async(namepers: string) =>{
 
-        const reponse = await axioshogwartssite.get<IHogwarts[]>("api/characters", {
-          params:{
-              characters: namepers,
-              language: "en-en"
-          }
-        })
+        const reponse = await axioshogwartssite.get<IHogwarts[]>("api/characters")
         console.log(reponse.data)
         return reponse.data
       }
