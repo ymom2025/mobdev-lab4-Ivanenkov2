@@ -1,13 +1,22 @@
 import axios from "axios"
-import { IFruits } from "../entity/Fruit.rdo";
+import { IHogwarts } from "../entity/Hogwarts.rdo";
 
-const axiosfruitsite =axios.create({
-    
-        baseURL: "https://www.fruityvice.com/doc/index.html#api-GET-GETsByOrder",
+const axioshogwartssite =axios.create({
+        baseURL: "https://hp-api.herokuapp.com/api/",
       });
 
-const axiosfruit  ={
+const axioshogwarts = {
+      hogwartsrequest: async(namepers: string) =>{
 
+        const reponse = await axioshogwartssite.get<IHogwarts[]>("api/characters", {
+          params:{
+              characters: namepers,
+              language: "en-en"
+          }
+        })
+        console.log(reponse.data)
+        return reponse.data
+      }
 }
 
-export default axiosfruit
+export default axioshogwarts
