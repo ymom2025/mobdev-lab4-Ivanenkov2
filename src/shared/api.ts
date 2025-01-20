@@ -2,7 +2,7 @@ import axios from "axios"
 import { IHogwarts } from "../entity/Hogwarts.rdo";
 
 const axioshogwartssite =axios.create({
-        baseURL: "https://hp-api.herokuapp.com/api/",
+        baseURL: "https://hp-api.herokuapp.com/",
       });
 
 const axioshogwarts = {

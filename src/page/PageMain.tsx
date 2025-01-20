@@ -36,8 +36,8 @@ const Page = () =>{
                 <p className="text">Факультет: {house}</p>
 
             </div>
-                <p>Напишите имя и фамилию персонажа:</p>
-                <input onChange={handleChange}/>
+                
+                <input placeholder="Напишите имя и фамилию персонажа" onChange={handleChange}/>
             <button>Найти</button>
             </form>
         </div>
