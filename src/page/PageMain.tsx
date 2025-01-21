@@ -3,19 +3,22 @@ import Feed from '../components/Feed/Feed'
 import { useState } from 'react'
 import { IHogwarts } from '../entity/Hogwarts.rdo'
 import axioshogwarts from '../shared/api'
-
+import Input from '../components/Input/Input'
 
 const PageMain = () =>{
-    // const [per, setPer] = useState<IHogwarts[]>
-    // const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    //     e.preventDefault()
-    //     setPer((await axioshogwarts.hogwartsrequest(per)).map);
-    
+    const [value, setValue] = useState("")
+    const [perz, setPerz] = useState<IHogwarts[]>([]);
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        setPerz((await axioshogwarts.hogwartsrequest(value)));
+    }
     return(
-        <div className="inputandbtn">    
-                <input placeholder="Напишите имя и фамилию персонажа" />
+        <div className="inputandbtn">  
+        <form onSubmit={handleSubmit}>
+            <Input value={value}  setValue={setValue} placevalue="Напишите имя и фамилию персонажа"/>
             <button>Найти</button>
-           {/* <Feed per={per}></Feed> */}
+            </form>  
+           <Feed perz={perz}></Feed>  
         </div>
     )
 }

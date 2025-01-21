@@ -1,11 +1,9 @@
 import { IHogwarts } from "../../entity/Hogwarts.rdo";
-import PageMain from "../../page/PageMain";
-import handlesubmit from "../Onepers/Onepers";
-
-const Feed= ({perz}: {perz: IHogwarts}) =>{
+import Pers from "../Onepers/Onepers";
+const Feed= ({perz}: {perz: IHogwarts[]}) =>{
     return(
-        <div>
-            {/* {perz.((onepers)=> <handlesubmit key={onepers.})} */}
+        <div className="feed">
+            {perz.map((onepers)=> <Pers key={onepers.id} {...onepers}/>)}  
         </div>
     )
 }

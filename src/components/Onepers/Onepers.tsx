@@ -1,9 +1,10 @@
-import './PageMain.css'
+import { Navigate, useNavigate } from "react-router"
 import Button from "../Button/Button";
 import { IHogwarts } from "../../entity/Hogwarts.rdo";
 
 
-const pers = ({name, image, actor, species, gender, house}: IHogwarts)=>{
+const Pers = ({name, image, actor, species, gender, house, id}: IHogwarts)=>{
+    const navigate = useNavigate();
     return(
         <div>
 
@@ -13,11 +14,11 @@ const pers = ({name, image, actor, species, gender, house}: IHogwarts)=>{
         <p className="text">Вид: {species}</p>
         <p className="text">Пол: {gender}</p>
         <p className="text">Факультет: {house}</p>
-        <Button>Посмотреть полную информацию: </Button>
-        <input></input>
+        <Button onClick={()=> navigate("/"+id)}>Посмотреть полную информацию</Button>
+        
         </div>
     )
 
 }
 
-export default pers
+export default Pers
