@@ -17,7 +17,7 @@ const Pers = ({name, image, actor, species, gender, house, id}: IHogwarts)=>{
         <p className="text">Пол: {gender}</p>
         <p className="text">Факультет: {house}</p>
         </div>
-        <Button onClick={()=> navigate("https://hp-api.herokuapp.com/api/character/"+id)}>Посмотреть полную информацию</Button>
+        <Button className="btn" onClick={()=> navigate("/pers/"+id)}>Посмотреть полную информацию</Button>
         
         </div>
     )
