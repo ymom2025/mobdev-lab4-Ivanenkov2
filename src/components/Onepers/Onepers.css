@@ -1,0 +1,14 @@
+.divpers{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 5px;
+    border-radius: 5%;  
+    margin: 0.5rem;
+    padding: 0.3rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textitems{
+    margin-top: auto;
+}
