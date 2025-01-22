@@ -8,13 +8,15 @@ const click= ()=>{
     const navigate = useNavigate();
     return(
         <div className="full">
+            
             <img/>
             <h2>{person?.actor}</h2>
-            <h2></h2>
+            <h2>{}</h2>
             <h2></h2>
             <h2></h2>
             <h2></h2>
             <Button className="cls" onClick={()=> navigate(-1)}>Вернуться назад</Button>
+        
         </div>
     )
 }

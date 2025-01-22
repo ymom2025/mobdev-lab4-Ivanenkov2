@@ -2,7 +2,7 @@ import { Navigate, useNavigate } from "react-router"
 import Button from "../Button/Button";
 import { IHogwarts } from "../../entity/Hogwarts.rdo";
 import "./Onepers.css"
-
+import Input from "../Input/Input";
 const Pers = ({name, image, actor, species, gender, house, id}: IHogwarts)=>{
     const navigate = useNavigate();
     return(
@@ -17,7 +17,7 @@ const Pers = ({name, image, actor, species, gender, house, id}: IHogwarts)=>{
         <p className="text">Пол: {gender}</p>
         <p className="text">Факультет: {house}</p>
         </div>
-        <Button onClick={()=> navigate("/"+id)}>Посмотреть полную информацию</Button>
+        <Button onClick={()=> navigate("https://hp-api.herokuapp.com/api/character/"+id)}>Посмотреть полную информацию</Button>
         
         </div>
     )
