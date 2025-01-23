@@ -2,7 +2,7 @@ import './PageMain.css'
 import Feed from '../components/Feed/Feed'
 import { useState } from 'react'
 import { IHogwarts } from '../entity/Hogwarts.rdo'
-import axioshogwarts from '../shared/api'
+import hogwartsAPI from '../shared/api'
 import Input from '../components/Input/Input'
 
 const PageMain = () =>{
@@ -10,7 +10,7 @@ const PageMain = () =>{
     const [perz, setPerz] = useState<IHogwarts[]>([]);
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        setPerz((await axioshogwarts.hogwartsrequest(value)));
+        setPerz((await hogwartsAPI.axioshogwarts()));
     }
     return(
         <div className="inputandbtn">  

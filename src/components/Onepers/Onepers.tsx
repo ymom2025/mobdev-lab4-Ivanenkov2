@@ -2,7 +2,6 @@ import { Navigate, useNavigate } from "react-router"
 import Button from "../Button/Button";
 import { IHogwarts } from "../../entity/Hogwarts.rdo";
 import "./Onepers.css"
-import Input from "../Input/Input";
 const Pers = ({name, image, actor, species, gender, house, id}: IHogwarts)=>{
     const navigate = useNavigate();
     return(

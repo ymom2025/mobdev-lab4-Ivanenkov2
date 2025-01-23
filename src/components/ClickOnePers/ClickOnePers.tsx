@@ -12,7 +12,7 @@ const Click= ()=>{
 
         const idd = async () =>{
             if(id){
-                const iddd = await axioshogwarts.hogwartsrequest(id)
+                const iddd = await axioshogwarts.Id(id)
                 setPerson(iddd)
             }
         };
@@ -22,8 +22,9 @@ const Click= ()=>{
     const navigate = useNavigate();
     return(
         <div className="full">
-            
-            <img/>
+            {person &&(
+                <div className="content">
+            <img src={person?.image}/>
             <h2>Персонаж: {person?.name}</h2>
             <h2>Актер: {person?.actor}</h2>
             <h2>Вид: {person?.species}</h2>
@@ -33,7 +34,8 @@ const Click= ()=>{
             <h2>Дата рождения: {person?.dateOfBirth}</h2>
             <h2>Колдун? {person?.wizard}</h2>
             <Button className="cls" onClick={()=> navigate(-1)}>Вернуться назад</Button>
-        
+                </div>
+            )}
         </div>
     )
 }
