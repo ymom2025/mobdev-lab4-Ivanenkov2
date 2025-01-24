@@ -23,6 +23,7 @@ const Click= ()=>{
         <div className="full">
             {person &&(
                 <div className="content">
+                    
             <img className="image" src={person.image}/>
             <div className="Texti">
             <h2>Персонаж: {person.name}</h2>
@@ -36,6 +37,7 @@ const Click= ()=>{
             <h2>Является магом: {person.wizard ? "Да":"Нет"}</h2>
             <Button className="cls" onClick={()=> navigate(-1)}>Вернуться назад</Button>
             </div>
+       
                 </div>
             )}
         </div>
