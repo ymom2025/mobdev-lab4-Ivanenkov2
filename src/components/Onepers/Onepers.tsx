@@ -7,7 +7,7 @@ const Pers = ({name, image, actor, species, gender, house, id}: IHogwarts)=>{
     return(
         <div className="divpers">
 
-        <img className="imag" src={image}/>
+        <img className="imag" alt="Картинки нет :(((" src={image}/>
         <div className="textitems">
 
         <p className="text">Персонаж: {name}</p>

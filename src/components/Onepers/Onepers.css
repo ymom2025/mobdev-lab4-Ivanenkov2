@@ -1,8 +1,6 @@
 .divpers{
-    border: 1px solid goldenrod;
-    margin: 5px;
-    border-radius: 5%;  
-    margin: 0.5rem;
+    /* border: 2px solid goldenrod; */
+    border-radius: 10px;
     padding: 0.3rem;
     display: flex;
     flex-direction: column;
@@ -13,15 +11,17 @@
 .textitems{
     margin-top: auto;
     margin-bottom: 5%;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .imag{
-    width: 250px;
-    margin: 40px;
+    width: 150px;
+    margin: 30px;
     height: auto;
 }
 
 .btn{
     margin-bottom: 5%;
+    border-radius: 15px;
+    width: 200px;
 }
