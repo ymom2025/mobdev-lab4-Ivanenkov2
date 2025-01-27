@@ -22,9 +22,9 @@ const PageMain = () => {
         if (value.length > 0) {
             filteredPerz = filteredPerz.filter((name) => name.name.includes(value))
         }
-
+        
         if (value2) {
-            filteredPerz = filteredPerz.filter((pol) => pol.gender != value2)
+            filteredPerz = filteredPerz.filter((pol) => pol.gender == value2)
         }
 
         // console.log(filteredPerz);
@@ -52,8 +52,8 @@ const PageMain = () => {
                 <select value={value2} onChange={(e) => setValue2(e.currentTarget.value as TGender)}>
 
                     <option></option>
-                    <option value="female">male</option>
-                    <option value="male">female</option>
+                    <option value="female">female</option>
+                    <option value="male">male</option>
                 </select>
             </form>
             <Feed perz={filterperz}></Feed>
