@@ -7,22 +7,36 @@ import Button from '../components/Button/Button'
 import hogwartsAPI from '../shared/api'
 import Input from '../components/Input/Input'
 
+type TGender = "female" | "male" | undefined
+
 const PageMain = () => {
     const [value, setValue] = useState("")
+    const [value2, setValue2] = useState<TGender>(undefined)
     const [perz, setPerz] = useState<IHogwarts[]>([]);
     const [filterperz, setFilterperz] = useState<IHogwarts[]>([]);
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault()
-        //setPerz((await hogwartsAPI.axioshogwarts()));
-    }
-    
-    useEffect (() =>{
-        setFilterperz(perz.filter((name) => name.name.includes(value)))
-        console.log(filterperz);
+
+    useEffect(() => {
+        let filteredPerz = [...perz]
+        // console.log(filteredPerz);
         
-    }, [value]);
-    
-    
+        if (value.length > 0) {
+            filteredPerz = filteredPerz.filter((name) => name.name.includes(value))
+        }
+
+        if (value2) {
+            filteredPerz = filteredPerz.filter((pol) => pol.gender != value2)
+        }
+
+        // console.log(filteredPerz);
+
+        setFilterperz(filteredPerz)
+    }, [value, value2]);
+
+    useEffect(() => {
+        console.log(filterperz);
+
+    }, [filterperz])
+
     useEffect(() => {
         const viZOV = async () => {
             const response = await hogwartsAPI.axioshogwarts()
@@ -33,9 +47,14 @@ const PageMain = () => {
     }, []);
     return (
         <div className="inputandbtn">
-            <form onSubmit={handleSubmit}>
+            <form>
                 <Input value={value} setValue={setValue} placevalue="Напишите имя и фамилию персонажа" />
+                <select value={value2} onChange={(e) => setValue2(e.currentTarget.value as TGender)}>
 
+                    <option></option>
+                    <option value="female">male</option>
+                    <option value="male">female</option>
+                </select>
             </form>
             <Feed perz={filterperz}></Feed>
         </div>

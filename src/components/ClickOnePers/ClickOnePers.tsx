@@ -24,7 +24,7 @@ const Click= ()=>{
             {person &&(
                 <div className="content">
                     
-            <img className="image" src={person.image}/>
+            <img alt="Картинка отсутствует" className="image" src={person.image}/>
             <div className="Texti">
             <h2>Персонаж: {person.name}</h2>
             <h2>Актер: {person.actor}</h2>
