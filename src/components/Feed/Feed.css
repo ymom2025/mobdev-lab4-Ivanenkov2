@@ -1,6 +1,6 @@
 .feed{
     display: grid;
-grid-template-columns: repeat(5, 2fr);
+grid-template-columns: repeat(5, 1fr);
 /* grid-template-rows: 1/4; */
 /* grid-row: span; */
 width: 100%;

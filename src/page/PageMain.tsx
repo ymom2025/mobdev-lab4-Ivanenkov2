@@ -35,7 +35,7 @@ const PageMain = () => {
         <div className="inputandbtn">
             <form onSubmit={handleSubmit}>
                 <Input value={value} setValue={setValue} placevalue="Напишите имя и фамилию персонажа" />
-                <Button>Найти</Button>
+
             </form>
             <Feed perz={filterperz}></Feed>
         </div>
