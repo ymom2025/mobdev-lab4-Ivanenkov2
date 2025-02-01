@@ -1,4 +1,4 @@
-import { Navigate, useNavigate } from "react-router"
+import { useNavigate } from "react-router"
 import Button from "../Button/Button";
 import { IHogwarts } from "../../entity/Hogwarts.rdo";
 import "./Onepers.css"

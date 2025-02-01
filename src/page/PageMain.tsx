@@ -1,9 +1,8 @@
 import './PageMain.css'
 import Feed from '../components/Feed/Feed'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useEffect } from 'react'
 import { IHogwarts } from '../entity/Hogwarts.rdo'
-import Button from '../components/Button/Button'
 import hogwartsAPI from '../shared/api'
 import Input from '../components/Input/Input'
 
